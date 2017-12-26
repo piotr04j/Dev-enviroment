@@ -2,10 +2,19 @@
   "name": "javascript-development-environment",
   "version": "1.0.0",
   "description": "My JavaScript development environment created with help course from Pluarslight. Author this course is Cory House ",
-  "scripts": {},
+  "scripts": {
+    "prestart": "node buildScripts/greetingMessage.js",
+    "start": "npm-run-all --parallel security-check open:src",
+    "open:src": "node buildScripts/srcServer.js",
+    "security-check": "nsp check",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel open:src localtunnel",
+
+  },
   "author": "Piotr Jałocha",
   "license": "MIT",
   "dependencies": {
+    "node-sass": "^4.7.2",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
