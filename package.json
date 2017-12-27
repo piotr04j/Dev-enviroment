@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "My JavaScript development environment created with help course from Pluarslight. Author this course is Cory House ",
   "scripts": {
-    "prestart": "node buildScripts/greetingMessage.js",
+    "prestart": "babel-node buildScripts/greetingMessage.js",
     "start": "npm-run-all --parallel security-check open:src",
-    "open:src": "node buildScripts/srcServer.js",
+    "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel"
@@ -21,6 +21,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "chalk": "^2.1.0",
@@ -39,6 +40,7 @@
     "localtunnel": "^1.8.3",
     "mocha": "^3.5.3",
     "nock": "^9.0.20",
+    "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.1",
     "nsp": "^2.8.0",
     "numeral": "^2.0.6",
@@ -48,7 +50,6 @@
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.19.1",
-    "webpack-md5-hash": "^0.0.5",
-    "node-sass": "^4.7.2"
+    "webpack-md5-hash": "^0.0.5"
   }
 }
